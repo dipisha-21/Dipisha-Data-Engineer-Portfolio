@@ -1,0 +1,33 @@
+Build a distinctive, recruiter-ready visual resume site and a grounded virtual ambassador for this target role: Data Engineer / Cloud Data Engineer.
+
+Use only these sources:
+- Resume: Attached PDF (Dipisha Shivangi)
+- Public links: 
+  - LinkedIn: https://linkedin.com/in/dipisha
+  - GitHub: https://github.com/dipisha-21
+- Recruiter should remember: 
+  1. Distributed Data Processing & Scalable ETL (Spark, Airflow, Python, SQL)
+  2. Cloud Data Warehousing & Database Engineering (GCP BigQuery, Looker, Oracle PL/SQL)
+  3. Data Quality, Reliability & DevOps Automation (Docker, Pytest, CI/CD)
+- Strongest projects or evidence: 
+  - Reduced ETL analytics latency by 30% across 1M+ records at Celebal Technologies.
+  - Automated Oracle PL/SQL payroll system with triggers & stored procedures.
+  - Reduced report generation time by ~30% across 50K+ records in Sales Insight Dashboard.
+- Public contact method: Email (shivangidipisha@gmail.com), LinkedIn, GitHub.
+- Keep private: Phone number (+91-7605858033) and home street address.
+
+Design for two recruiter modes:
+1. A 60-second scan that immediately communicates positioning, role alignment, strongest evidence, and contact action.
+2. A deeper review where the recruiter can inspect projects and ask the virtual ambassador evidence-based questions.
+
+Create two meaningfully different directions in Replit Design, then refine the stronger one. Include:
+- A role-specific positioning statement.
+- A concise role-match section connecting capabilities to evidence.
+- Selected projects ordered by relevance, each showing problem, contribution, tools, and outcome.
+- Scannable experience, leadership, skills, and education.
+- Working links, downloadable resume, and clear contact action.
+- A virtual ambassador chat integrated into the site design.
+
+The virtual ambassador must answer only from verified sources on this site. It should handle questions about background, role fit, skills, projects, impact, and leadership; link to relevant sections; offer four recruiter-focused starter questions; and say “I don’t have verified information about that” for unsupported claims. Keep model calls and credentials server-side. Do not store or log chat content. Add rate limits and prompt-injection protection.
+
+Do not invent projects, skills, dates, metrics, testimonials, employers, preferences, or availability. Make the complete experience responsive, accessible, keyboard-friendly, and polished at 390 px and desktop widths. Publish it and return the live URL with a verification checklist.
