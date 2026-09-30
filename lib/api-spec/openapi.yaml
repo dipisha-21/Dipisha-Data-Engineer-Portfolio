@@ -10,6 +10,8 @@ servers:
 tags:
   - name: health
     description: Health operations
+  - name: ambassador
+    description: Source-grounded recruiter questions
 paths:
   /healthz:
     get:
@@ -24,6 +26,44 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+  /ambassador/starters:
+    get:
+      operationId: getAmbassadorStarters
+      tags: [ambassador]
+      summary: Recruiter-focused starter questions
+      responses:
+        "200":
+          description: Questions with relevant on-page sections
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/AmbassadorStarter"
+  /ambassador/ask:
+    post:
+      operationId: askAmbassador
+      tags: [ambassador]
+      summary: Ask a question about verified resume evidence
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AmbassadorQuestionInput"
+      responses:
+        "200":
+          description: Evidence-grounded response or explicit unsupported answer
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AmbassadorAnswer"
+        "400":
+          description: Invalid question
+        "429":
+          description: Too many requests
+        "503":
+          description: Model temporarily unavailable
 components:
   schemas:
     HealthStatus:
@@ -33,4 +73,41 @@ components:
           type: string
       required:
         - status
+    AmbassadorStarter:
+      type: object
+      required: [question, href]
+      properties:
+        question:
+          type: string
+        href:
+          type: string
+    AmbassadorQuestionInput:
+      type: object
+      required: [question]
+      additionalProperties: false
+      properties:
+        question:
+          type: string
+          minLength: 2
+          maxLength: 500
+    AmbassadorCitation:
+      type: object
+      required: [label, href]
+      properties:
+        label:
+          type: string
+        href:
+          type: string
+    AmbassadorAnswer:
+      type: object
+      required: [answer, citations, unsupported]
+      properties:
+        answer:
+          type: string
+        citations:
+          type: array
+          items:
+            $ref: "#/components/schemas/AmbassadorCitation"
+        unsupported:
+          type: boolean
 
