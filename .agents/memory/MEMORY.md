@@ -1,0 +1,1 @@
+- [Recruiter portfolio direction](recruiter-portfolio-direction.md) — favor proof-led recruiter scanning over a career-story-first treatment for this data-engineering site.
